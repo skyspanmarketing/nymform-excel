@@ -1,0 +1,13 @@
+{
+  "id": "orders-01",
+  "workbook": "orders.xlsx",
+  "sheet": "Orders",
+  "range": "A1:F501",
+  "category": "lookup",
+  "prompt": "Which Product was in the order with the largest Amount?",
+  "private": ["A", "B"],
+  "check": {
+    "type": "cell",
+    "expected": "Standing Desk"
+  }
+}

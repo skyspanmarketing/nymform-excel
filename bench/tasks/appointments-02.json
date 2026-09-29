@@ -1,0 +1,19 @@
+{
+  "id": "appointments-02",
+  "workbook": "appointments.xlsx",
+  "sheet": "Appointments",
+  "range": "A1:F301",
+  "category": "counting",
+  "prompt": "Number of no-shows per Location, one row per location",
+  "private": ["A", "B"],
+  "check": {
+    "type": "table",
+    "expected": [
+      ["Downtown", 10],
+      ["Eastside", 8],
+      ["Harbor View", 10],
+      ["Northgate", 8]
+    ],
+    "tolerance": 0
+  }
+}

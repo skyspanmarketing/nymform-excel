@@ -1,0 +1,20 @@
+{
+  "id": "sections-01",
+  "workbook": "sections.xlsx",
+  "sheet": "Sections",
+  "range": "A1:H201",
+  "category": "counting",
+  "prompt": "Number of sections for each Days pattern, one row per pattern",
+  "private": ["C"],
+  "check": {
+    "type": "table",
+    "expected": [
+      ["F", 24],
+      ["MW", 30],
+      ["MWF", 68],
+      ["TTh", 64],
+      ["TW", 14]
+    ],
+    "tolerance": 0
+  }
+}

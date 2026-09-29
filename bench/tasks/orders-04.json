@@ -1,0 +1,14 @@
+{
+  "id": "orders-04",
+  "workbook": "orders.xlsx",
+  "sheet": "Orders",
+  "range": "A1:F501",
+  "category": "dates",
+  "prompt": "What was the total Amount of orders placed in March 2025?",
+  "private": ["A", "B"],
+  "check": {
+    "type": "cell",
+    "expected": 17778.35,
+    "tolerance": 0.01
+  }
+}

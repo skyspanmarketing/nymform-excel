@@ -1,0 +1,13 @@
+{
+  "id": "roster-02",
+  "workbook": "roster.xlsx",
+  "sheet": "Roster",
+  "range": "A1:F121",
+  "category": "lookup",
+  "prompt": "Which Department does the employee with the earliest Start date work in?",
+  "private": ["A", "B", "F"],
+  "check": {
+    "type": "cell",
+    "expected": "Finance"
+  }
+}

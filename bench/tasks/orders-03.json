@@ -1,0 +1,20 @@
+{
+  "id": "orders-03",
+  "workbook": "orders.xlsx",
+  "sheet": "Orders",
+  "range": "A1:F501",
+  "category": "conditional_totals",
+  "prompt": "Total Amount per Region, one row per region",
+  "private": ["A", "B"],
+  "check": {
+    "type": "table",
+    "expected": [
+      ["Central", 39657.34],
+      ["East", 56437.17],
+      ["North", 44508.24],
+      ["South", 37601.09],
+      ["West", 35741.64]
+    ],
+    "tolerance": 0.01
+  }
+}

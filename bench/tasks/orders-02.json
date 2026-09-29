@@ -1,0 +1,14 @@
+{
+  "id": "orders-02",
+  "workbook": "orders.xlsx",
+  "sheet": "Orders",
+  "range": "A1:F501",
+  "category": "counting",
+  "prompt": "How many orders from the West region had an Amount of 1,000 or more?",
+  "private": ["A", "B"],
+  "check": {
+    "type": "cell",
+    "expected": 9,
+    "tolerance": 0
+  }
+}

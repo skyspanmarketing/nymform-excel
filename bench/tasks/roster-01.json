@@ -1,0 +1,21 @@
+{
+  "id": "roster-01",
+  "workbook": "roster.xlsx",
+  "sheet": "Roster",
+  "range": "A1:F121",
+  "category": "conditional_totals",
+  "prompt": "Average Salary per Department, one row per department",
+  "private": ["A", "B", "F"],
+  "check": {
+    "type": "table",
+    "expected": [
+      ["Engineering", 86188.8889],
+      ["Finance", 85300],
+      ["Marketing", 93808.3333],
+      ["Operations", 81383.3333],
+      ["Sales", 75444.4444],
+      ["Support", 85172]
+    ],
+    "tolerance": 0.01
+  }
+}

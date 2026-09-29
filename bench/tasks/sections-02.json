@@ -1,0 +1,13 @@
+{
+  "id": "sections-02",
+  "workbook": "sections.xlsx",
+  "sheet": "Sections",
+  "range": "A1:H201",
+  "category": "lookup",
+  "prompt": "Who is the Instructor of the section with the highest Enrolled?",
+  "private": ["C"],
+  "check": {
+    "type": "cell",
+    "expected": "Ramiro Wintheiser-Cruickshank"
+  }
+}

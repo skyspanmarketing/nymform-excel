@@ -1,0 +1,15 @@
+node_modules/
+dist/
+coverage/
+test-results/
+playwright-report/
+.env
+.env.*
+*.key
+*.pem
+*.pfx
+*.crt
+.office-addin-dev-certs/
+bench/results/*.jsonl.tmp
+.DS_Store
+.scratch/

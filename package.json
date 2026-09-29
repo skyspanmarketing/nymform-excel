@@ -1,0 +1,78 @@
+{
+  "name": "nymform-excel",
+  "version": "0.1.0-alpha",
+  "private": true,
+  "description": "Nymform for Excel: ask questions about a spreadsheet while private values are replaced before anything is sent to a model.",
+  "license": "AGPL-3.0-only",
+  "author": "Jorge Garcia",
+  "homepage": "https://github.com/skyspanmarketing/nymform-excel",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "config": {
+    "app_to_debug": "excel",
+    "app_type_to_debug": "desktop",
+    "dev_server_port": 41951
+  },
+  "scripts": {
+    "build": "webpack --mode production",
+    "build:dev": "webpack --mode development",
+    "build:bench": "webpack --mode production --env bench",
+    "dev-server": "webpack serve --mode development",
+    "dev-server:bench": "webpack serve --mode development --env bench",
+    "start": "office-addin-debugging start manifest.dev.xml",
+    "stop": "office-addin-debugging stop manifest.dev.xml",
+    "certs": "office-addin-dev-certs install",
+    "validate": "office-addin-manifest validate manifest.dev.xml && office-addin-manifest validate manifest.release.xml && office-addin-manifest validate manifest.bench.xml",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "vitest run",
+    "battery": "vitest run tests/battery.test.ts",
+    "test:e2e": "playwright test",
+    "check:release": "node scripts/check-release.mjs",
+    "icons": "node scripts/make-icons.mjs",
+    "bench:generate": "tsx bench/generate.ts",
+    "leakcheck": "tsx bench/leakcheck.ts",
+    "secrets": "gitleaks detect --redact --no-banner -v --log-opts=--all",
+    "hooks": "git config core.hooksPath .githooks",
+    "start:bench": "office-addin-debugging start manifest.bench.xml --dev-server \"npm run dev-server:bench\""
+  },
+  "dependencies": {
+    "@fluentui/react-components": "^9.74.9",
+    "@fluentui/react-icons": "^2.0.341",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@faker-js/faker": "^10.6.0",
+    "@playwright/test": "^1.56.1",
+    "@types/node": "^22.20.4",
+    "@types/office-js": "^1.0.609",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "copy-webpack-plugin": "^14.0.0",
+    "eslint": "^10.11.0",
+    "exceljs": "^4.4.0",
+    "globals": "^17.12.0",
+    "html-webpack-plugin": "^5.6.8",
+    "office-addin-debugging": "^7.0.0",
+    "office-addin-dev-certs": "^3.0.0",
+    "office-addin-manifest": "^3.0.0",
+    "ts-loader": "^9.6.2",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.70.1",
+    "vitest": "^5.0.1",
+    "webpack": "^5.111.1",
+    "webpack-cli": "^7.2.3",
+    "webpack-dev-server": "^6.0.0"
+  },
+  "overrides": {
+    "adm-zip": "^0.6.1",
+    "exceljs": {
+      "uuid": "^11.1.1"
+    }
+  }
+}

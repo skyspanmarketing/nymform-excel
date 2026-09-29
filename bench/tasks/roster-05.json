@@ -1,0 +1,18 @@
+{
+  "id": "roster-05",
+  "workbook": "roster.xlsx",
+  "sheet": "Roster",
+  "range": "A1:F121",
+  "category": "ranking",
+  "prompt": "The three highest-paid employees, highest first: Name and Salary",
+  "private": ["A", "B", "F"],
+  "check": {
+    "type": "table",
+    "expected": [
+      ["Arnulfo Haag", 168900],
+      ["Remington Crooks", 164200],
+      ["Bernice Batz", 150900]
+    ],
+    "tolerance": 0
+  }
+}

@@ -1,0 +1,47 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`regression battery (default suggestions) > pins the counts per workbook, so a change in what blocks shows in review 1`] = `
+{
+  "appointments": {
+    "privateByDefault": [
+      "A Client name (text)",
+      "B Phone (text)",
+    ],
+    "questions": 33,
+    "sampleRowsBlocked": 0,
+  },
+  "orders": {
+    "privateByDefault": [
+      "A Customer (text)",
+      "B Email (text)",
+    ],
+    "questions": 49,
+    "sampleRowsBlocked": 0,
+  },
+  "roster": {
+    "privateByDefault": [
+      "A Name (text)",
+      "B Employee ID (text)",
+      "F Salary (number)",
+    ],
+    "questions": 46,
+    "sampleRowsBlocked": 0,
+  },
+  "sections": {
+    "privateByDefault": [
+      "C Instructor (text)",
+    ],
+    "questions": 50,
+    "sampleRowsBlocked": 0,
+  },
+  "signups (private dates)": {
+    "privateByDefault": [
+      "A Customer (text)",
+      "B Date of birth (date)",
+      "C Last contact (date)",
+    ],
+    "questions": 29,
+    "sampleRowsBlocked": 0,
+  },
+}
+`;

@@ -1,0 +1,14 @@
+{
+  "id": "appointments-03",
+  "workbook": "appointments.xlsx",
+  "sheet": "Appointments",
+  "range": "A1:F301",
+  "category": "dates",
+  "prompt": "How many appointments fell on a Saturday or Sunday?",
+  "private": ["A", "B"],
+  "check": {
+    "type": "cell",
+    "expected": 25,
+    "tolerance": 0
+  }
+}

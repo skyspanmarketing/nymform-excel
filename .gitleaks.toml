@@ -1,0 +1,9 @@
+# gitleaks configuration: the default rules, plus OpenRouter keys.
+[extend]
+useDefault = true
+
+[[rules]]
+id = "openrouter-api-key"
+description = "OpenRouter API key"
+regex = '''sk-or-(?:v1-)?[0-9a-fA-F]{32,}'''
+keywords = ["sk-or-"]

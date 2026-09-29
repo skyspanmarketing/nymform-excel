@@ -1,0 +1,12 @@
+#!/bin/sh
+# Secret scan on every commit (spec §3). Install gitleaks, then run `npm run hooks` once.
+if ! command -v gitleaks >/dev/null 2>&1; then
+  echo "pre-commit: gitleaks is not installed; refusing to commit without a secret scan." >&2
+  echo "Install it (https://github.com/gitleaks/gitleaks#installing) and try again." >&2
+  exit 1
+fi
+if gitleaks git --help >/dev/null 2>&1; then
+  exec gitleaks git --pre-commit --staged --redact --no-banner
+fi
+# Older gitleaks (8.16) uses `protect` for staged changes.
+exec gitleaks protect --staged --redact --no-banner

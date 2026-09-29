@@ -1,0 +1,13 @@
+{
+  "id": "roster-04",
+  "workbook": "roster.xlsx",
+  "sheet": "Roster",
+  "range": "A1:F121",
+  "category": "text",
+  "prompt": "Each employee's last name (the last word of Name)",
+  "private": ["A", "B", "F"],
+  "check": {
+    "type": "column",
+    "expected": ["Crooks", "Marks", "Reichel-Ward", "Gottlieb", "Thistlevane", "Cummings", "Stroman", "Windler", "McKenzie", "Monahan", "Bashirian", "Wisoky", "Yarrowind", "Fahey-Olson", "Collier", "Luettgen", "Pagac", "Boyer", "Roob", "Collier", "Thompson", "Wexcombe", "Leuschke", "Denesik", "Mayer", "Heller", "Metz", "Parker", "Green", "Breitenberg", "Greenfelder", "Abshire", "Ulmsforde", "Mayert", "Oxtavel", "Jenkins", "Carter", "Cormier", "Erdman", "Quigley", "Dicki", "Lockman", "Kshlerin", "Schmidt", "Olson", "Christiansen", "DuBuque", "Hills-Hermiston", "Skiles", "Hettinger", "Satterfield", "Welch", "Lowe", "Kuhn", "Johns", "Muller", "Kuhic", "Feest", "Kilback-Kuhn", "Crooks", "Corrander", "Zelthorpe", "Rolfson", "Bogisich", "Schuppe", "Pollich", "Thompson", "Marbrecht", "Mills", "Kautzer", "Wolf", "Batz", "Kirlin", "Conn", "Huels", "Jenkins", "Varnhollow", "Haag", "Parisian", "Waters", "Hoeger", "Powlowski", "Leffler", "Waelchi", "Hermiston", "Wilderman", "Balistreri", "Huel", "Gorczany", "O'Connell-Weber", "Jast", "Zboncak", "Ankunding", "Dickens", "Weissnat", "Brekke", "Dickinson", "Bernier", "Lind", "Keebler", "Erdman", "Gleichner", "Raynor", "Kohler", "Kozey", "Osinski", "Corkery", "Vandervort", "Rau-Will", "Champlin", "Schroeder", "Gorczany", "Ankunding", "Murray", "Bogisich", "Harvey", "Brindlewock", "Huels", "Lesch", "Hartmann"]
+  }
+}

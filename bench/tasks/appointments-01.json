@@ -1,0 +1,19 @@
+{
+  "id": "appointments-01",
+  "workbook": "appointments.xlsx",
+  "sheet": "Appointments",
+  "range": "A1:F301",
+  "category": "conditional_totals",
+  "prompt": "Total Duration (min) per Location, counting only appointments that were not no-shows, one row per location",
+  "private": ["A", "B"],
+  "check": {
+    "type": "table",
+    "expected": [
+      ["Downtown", 2475],
+      ["Eastside", 2895],
+      ["Harbor View", 3045],
+      ["Northgate", 2025]
+    ],
+    "tolerance": 0
+  }
+}

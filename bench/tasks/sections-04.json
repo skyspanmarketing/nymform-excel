@@ -1,0 +1,18 @@
+{
+  "id": "sections-04",
+  "workbook": "sections.xlsx",
+  "sheet": "Sections",
+  "range": "A1:H201",
+  "category": "ranking",
+  "prompt": "The three sections with the lowest fill rate (Enrolled divided by Cap): Course, Section and fill rate",
+  "private": ["C"],
+  "check": {
+    "type": "table",
+    "expected": [
+      ["PSYC 110", "01", 0.075],
+      ["CS 120", "01", 0.133333],
+      ["ENGL 401", "01", 0.171429]
+    ],
+    "tolerance": 0.0005
+  }
+}
