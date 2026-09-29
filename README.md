@@ -27,11 +27,45 @@ sent. Values under 4 characters in your typed question, values encoded in ways t
 for, columns you don't mark private, re-identification from counts in small groups, and what the
 model provider does while processing a request are not covered. Details: [SECURITY.md](SECURITY.md).
 
-## Install (sideload)
+## Install the hosted release
 
-You need Node.js 22 or later, Excel on the web or Excel for Windows or Mac, and an
-[OpenRouter](https://openrouter.ai) API key. The commands below contain no comments, so each block
-can be pasted into a terminal as it is.
+The release build is served from GitHub Pages at <https://skyspanmarketing.github.io/nymform-excel/>.
+Its manifest is <https://skyspanmarketing.github.io/nymform-excel/manifest.xml>, and
+`build-info.json` at the same address names the commit it was built from. Nothing runs on your
+computer except Excel: no local server and no Node.js. You need
+Excel on the web or Excel for Windows or Mac (Excel JavaScript API 1.9 or later) and an
+[OpenRouter](https://openrouter.ai) API key.
+
+- **Excel for Mac** (the method used in the acceptance run below): download `manifest.xml` from the
+  address above, copy it into `~/Library/Containers/com.microsoft.Excel/Data/Documents/wef/` (create
+  the `wef` folder if it isn't there), then quit and reopen Excel. Choose **Home → Add-ins**; the
+  add-in is listed under **Developer Add-ins** as **Nymform for Excel**. Once it has been opened, a
+  **Nymform** button also appears at the right end of the **Home** tab.
+- **Excel on the web:** open a workbook, choose **Home → Add-ins → More Add-ins**, open **My
+  Add-ins**, choose **Upload My Add-in**, and pick the downloaded `manifest.xml`. This route hasn't
+  been exercised with the hosted build yet.
+- **Excel for Windows:** not tested yet.
+
+The pane's footer shows the version and the build commit (`0.1.0-alpha · build bfe578f` for this
+release), so a hosted pane can be told apart from a local build.
+
+## Hosted acceptance
+
+On 2026-09-28 the hosted `v0.1.0-alpha` build (commit `bfe578f`) was installed by the Mac method above
+in Excel for Mac 16.113.2 on macOS 26.6.2 and run once against a synthetic five-row workbook. The
+substituted preview contained none of the workbook's names or emails, the structure-only preview
+contained no cell values, one live request to the default model returned
+`=SUMIF($C$2:$C$6,C2,$D$2:$D$6)`, the formula passed the gate and, filled down, gave the expected
+region totals, the source cells were unchanged, and the key was gone after the pane was closed and
+reopened. That is one smoke test on one host with synthetic data: not an accuracy measurement, not
+a check of Excel for Windows or Excel on the web, and not a fitness claim for sensitive data (see
+[SECURITY.md](SECURITY.md)).
+
+## Run from source (developer setup)
+
+You need Node.js 22.12 or later (`engines` in `package.json`),
+Excel on the web or Excel for Windows or Mac, and an [OpenRouter](https://openrouter.ai) API key.
+The commands below contain no comments, so each block can be pasted into a terminal as it is.
 
 1. Open a terminal in the project folder (the one that holds `package.json`), then install and
    create the local certificate. This is needed once; answer yes, or enter your password, when asked
@@ -57,7 +91,10 @@ can be pasted into a terminal as it is.
    project folder.
 
    **Excel for Windows or Mac:** in a second terminal window, in the same folder, run the command
-   below. It sideloads `manifest.dev.xml` and opens Excel; `npm stop` removes it again.
+   below. It sideloads `manifest.dev.xml` and opens Excel; `npm stop` removes it again. On a Mac you
+   can instead copy `manifest.dev.xml` into the `wef` folder named above and restart Excel, which is
+   how the Mac acceptance runs were sideloaded; `npm start` and `npm stop` haven't been verified on
+   Mac or Windows.
 
    ```sh
    npm start
@@ -67,9 +104,6 @@ can be pasted into a terminal as it is.
    **Home → Add-ins**. On a Mac, Excel picks up a newly sideloaded add-in when it starts (quit and
    reopen Excel if it was already open), and lists it there under **Developer Add-ins**; **Insert →
    My Add-ins** doesn't show it. The pane opens on **Setup**.
-
-When the repository is public, the release build is served from GitHub Pages and
-`manifest.release.xml` can be uploaded instead, with no local server.
 
 ## OpenRouter setup
 
